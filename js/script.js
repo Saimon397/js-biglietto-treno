@@ -11,10 +11,16 @@ if (isNaN(km) || isNaN(eta)) {
 let CostoTicket = 0.21 * km;
 console.log(CostoTicket);
 
-let PrezzoMin = (CostoTicket * 20) / 100;
+let ScontoMin = (CostoTicket * 20) / 100;
+console.log(ScontoMin);
+
+let PrezzoMin = CostoTicket - ScontoMin;
 console.log(PrezzoMin);
 
-let PrezzOld = (CostoTicket * 40) / 100;
+let ScontOld = (CostoTicket * 40) / 100;
+console.log(ScontOld);
+
+let PrezzOld = CostoTicket - ScontOld;
 console.log(PrezzOld);
 
 if (eta < 18) {
@@ -31,4 +37,4 @@ if (eta < 18) {
 let Prezzo = CostoTicket.toFixed(2);
 
 let TicketFin = document.getElementById("Ticket");
-TicketFin.innerText = Prezzo;
+TicketFin.innerText = Prezzo + " " + "\u20AC";
